@@ -122,7 +122,7 @@ class Save extends CustomerController
             $this->messageManager->addError(__('Something went wrong while saving your subscription.'));
         } else {
             try {
-                if ((boolean)$this->getRequest()->getParam('remove_account', false)) {
+                if ((bool)$this->getRequest()->getParam('remove_account', false)) {
 					$this->registry->register('isSecureArea', true);
 					$this->customerRepository->deleteById($customerId);
 					
